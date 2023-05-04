@@ -1,0 +1,235 @@
+<%- include('./modules/_header', {page: "Login"}); %>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="/public/styles/main.css">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="login text-center bg-dark text-light overflow-hidden container-fluid">      
+      <section class="background-radial-gradient overflow-hidden container-fluid">
+        <%- include('./modules/_alert'); %>        
+        <div class="container-fluid px-4 py-5 px-md-5 text-center text-lg-start my-5">
+          <div class="row gx-lg-5 align-items-center mb-5">
+            <div class="col-lg-6 mb-5 mb-lg-0" style="z-index: 10">
+              <h1
+                class="my-5 display-5 fw-bold ls-tight"
+                style="color: hsl(218, 81%, 95%)"
+              >
+                Welcome to <br />
+                <span
+                  style="
+                    color: rgb(140, 177, 243);
+                    font-family: Century Gothic, CenturyGothic, AppleGothic,
+                      sans-serif;
+                  "
+                  >LabQuip</span
+                >
+              </h1>
+              <p class="mb-4 opacity-70" style="color: hsl(218, 81%, 85%)">
+                This is a Lab Equipment Management website.
+              </p>
+            </div>
+
+            <div class="col-lg-6 mb-5 mb-lg-0 position-relative" style="padding-top: 45px;">
+              <div
+                id="radius-shape-1"
+                class="position-absolute rounded-circle shadow-5-strong"
+              ></div>
+              <div
+                id="radius-shape-2"
+                class="position-absolute shadow-5-strong"
+              ></div>
+
+              <div class="card bg-glass">
+                <div class="card-body px-4 py-5 px-md-5">
+                  <form class="form-signin" action="/login" method="post">
+                    <div class="row">
+                      <h1 class="login-label mb-3"><b><b>LOGIN</b></b></h1>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="form-outline mb-4">
+                      <label class="form-label" for="inputEmail"
+                        >Email</label
+                      >
+                      <input
+                        type="email"
+                        id="inputEmail"
+                        class="form-control"
+                        placeholder="Enter your email."
+                        name="email"
+                        required
+                      />
+                    </div>
+
+                    <!-- Password -->
+                    <div class="form-outline mb-4">
+                      <label class="form-label" for="inputPassword"
+                        >Password</label
+                      >
+                      <input
+                        type="password"
+                        id="inputPassword"
+                        class="form-control"
+                        placeholder="Enter your password."
+                        name="password"
+                        required
+                      />
+                    </div>
+
+                    <!-- <div class="col-mb-4">
+                  <small id="passwordHelp" class="text-danger">
+                    Must be 8-20 characters long.
+                  </small>      
+                </div>   -->
+
+                    <!-- Submit -->
+                    <button
+                      class="btn-submit btn-lg btn-primary btn-block"
+                      type="submit"
+                    >
+                      <b>LOG IN</b>
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
+
+<%- include('modules/_footer'); %>
+
+<!-- <style>
+          .background-radial-gradient {
+            background-color: hsl(218, 41%, 15%);
+            background: url(https://c4.wallpaperflare.com/wallpaper/207/615/632/fantasy-art-texture-computer-wallpaper-preview.jpg);
+            background-image: radial-gradient(
+                650px circle at 0% 0%,
+                rgb(53, 79, 126) 15%,
+                rgb(45, 68, 108) 35%,
+                rgb(30, 45, 72) 75%,
+                rgb(29, 43, 68) 80%,
+                transparent 100%
+              ),
+              radial-gradient(
+                1250px circle at 100% 100%,
+                rgb(68, 102, 162) 15%,
+                rgb(45, 68, 108) 35%,
+                rgb(30, 45, 72) 75%,
+                rgb(29, 43, 68) 80%,
+                transparent 100%
+              );
+          }
+          .h3{
+            color: #000000;
+            padding-bottom: 5px;
+          }
+
+          .form-label{
+            color: #000000;
+          }
+
+          .btn {
+            appearance: none;
+            background-color: #000000;
+            border-radius: 15px;
+            box-sizing: border-box;
+            color: #ffffff;
+            cursor: pointer;
+            display: inline-block;
+            font-family: Roobert, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+              Helvetica, Arial, sans-serif, 'Apple Color Emoji',
+              'Segoe UI Emoji', 'Segoe UI Symbol';
+            font-size: 16px;
+            font-weight: 600;
+            line-height: normal;
+            margin: 0;
+            min-height: 60px;
+            min-width: 0;
+            outline: none;
+            padding: 16px 24px;
+            text-align: center;
+            text-decoration: none;
+            transition: all 300ms cubic-bezier(0.23, 1, 0.32, 1);
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            width: 100%;
+            will-change: transform;
+          }
+
+          .btn:disabled {
+            pointer-events: none;
+          }
+
+          .btn:hover {
+            box-shadow: #e9c8fc 0 8px 15px;
+            background-color: #8513c7;
+            transform: translateY(-2px);
+          }
+
+          .btn:active {
+            box-shadow: none;
+            transform: translateY(0);
+          }
+
+          #radius-shape-1 {
+            height: 220px;
+            width: 220px;
+            top: -60px;
+            left: -130px;
+            background: radial-gradient(#44006b, #ad1fff);
+            overflow: hidden;
+          }
+
+          #radius-shape-2 {
+            border-radius: 38% 62% 63% 37% / 70% 33% 67% 30%;
+            bottom: -60px;
+            right: -110px;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(#44006b, #ad1fff);
+            overflow: hidden;
+          }
+
+          .bg-glass {
+            background-color: rgba(255, 255, 255, 0.9) !important;
+            backdrop-filter: saturate(200%) blur(25px);
+          }
+
+          input:focus {
+            outline: none;
+            box-shadow: 0px 0px 5px #8513c7;
+          }
+
+          input:hover {
+            border: 1px solid rgb(0, 0, 0);
+            box-shadow: 0px 0px 5px #8513c7;
+          }
+
+          input:focus:hover {
+            outline: none;
+            box-shadow: 0px 0px 5px #44006b;
+            border-radius: 0;
+          }
+        </style> -->

@@ -1,0 +1,31 @@
+<%- include('../modules/_header', {page: "Suppliers"}); %>
+<%- include('../modules/_navs', {page: "Suppliers"}); %>
+
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap
+align-items-center border-bottom mt-0 mb-3 mt-md-3 py-4">
+    <h1 class="h3 content-header">
+        <i class="ic-v-card"></i>
+        Suppliers
+    </h1>
+    <div class="content-action btn-toolbar mb-2 mb-md-0">
+        <!-- <button type="button" class="btn btn-sm  mr-3 btn-secondary"
+            data-toggle="modal" data-target="#addBalance">
+            <i class="ic-plus"></i>
+            Add Balance
+        </button> -->
+        <button type="button" class="btn btn-sm btn-primary" data-toggle="modal"
+            data-target="#addProduct">
+            <i class="ic-plus"></i>
+            Update Details
+        </button>
+    </div>
+</div>
+
+
+<%- include('../modules/_alert'); %>
+<%- include('../modules/_search', { path: 'products', placeholderText: 'Enter product code'}); %>
+<%- include('./_data'); %>
+<%- include('../modules/_pagination', {path: 'products'}); %>
+<%- include('../products/_collect-form'); %>
+<%- include('../modules/_delete-form', {deleteItemTypes: 'products'}); %>
+<%- include('../modules/_footer'); %>

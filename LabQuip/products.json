@@ -1,0 +1,32 @@
+[{
+  "_id": {
+    "$oid": "641339c7fd9de7197836aeaa"
+  },
+  "quantity": 50,
+  "RemainingQuantity": 15,
+  "status": "alloted",
+  "name": "Lenovo Yogabook 14",
+  "code": "LNV-LP-001",
+  "rate": 72000,
+  "poNum": 123456,
+  "invoiceNum": 654321,
+  "purchaseDate": {
+    "$date": {
+      "$numberLong": "1675229400000"
+    }
+  },
+  "warrantyPeriod": 12,
+  "supplierName": "ABC Electronics",
+  "supplierPhone": {
+    "$numberLong": "9537834081"
+  },
+  "supplierAddress": "Vaniyavad Circle, Nadiad",
+  "productDescription": "wwd",
+  "allotmentLoc": "IT Lab 5",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1679001375821"
+    }
+  },
+  "__v": 0
+}]

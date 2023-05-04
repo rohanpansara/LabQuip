@@ -1,0 +1,108 @@
+<div class="content-box">
+    <div class="table-responsive">
+        <table class="table table-striped table-sm">
+            <thead class="table__header">
+                <tr>
+                    <th>Month</th>
+                    <!-- <th>Title</th> -->
+                    <th>Expense Details</th>
+                    <th>Amount</th>
+                    <th class="text-center">Actions</th>
+                    <!-- <th>Report</th> -->
+                </tr>
+            </thead>
+            <tbody class="table__body font-weight-bold">
+                <% if(locals.expenses){
+                    expenses.forEach((expense) => { %>
+                <tr>
+                    <td><%if(expense.expenseDate) { %>
+                        <%= (expense.expenseDate.getMonth())+1; %>
+                    <% } else { %>
+                        <%= expense.createdAt.toLocaleDateString(); %>
+                    <% } %>
+                    </td>
+                    <!-- <td><%= expense.purpose %></td> -->
+                    <td>
+                        <div class="expense-box">
+
+                            <% if(expense.monitors) { %>
+                                <span>Monitors: <strong>
+                                    &#8377; <%= expense.monitors.toLocaleString(); %>
+                                </strong></span>
+                            <% } %>
+
+                            <% if(expense.keyboards) { %>
+                                <span>Keyboards: <strong>
+                                    &#8377; <%= expense.keyboards.toLocaleString(); %>
+                                </strong></span>
+                            <% } %>
+
+                            <% if(expense.mouse) { %>
+                                <span>Mouse: <strong>
+                                    &#8377; <%= expense.mouse.toLocaleString(); %>
+                                </strong></span>
+                            <% } %>
+
+                            <% if(expense.motherboard) { %>
+                                <span>Motherboard: <strong>
+                                    &#8377; <%= expense.motherboard.toLocaleString(); %>
+                                </strong></span>
+                            <% } %>
+
+                           <% if(expense.rams) { %>
+                                <span>RAM: <strong>
+                                    &#8377; <%= expense.rams.toLocaleString(); %>
+                                </strong></span>
+                            <% } %>
+
+                            <% if(expense.processors) { %>
+                                <span>Processors: <strong>
+                                    &#8377; <%= expense.processors.toLocaleString(); %>
+                                </strong></span>
+                            <% } %>
+
+                            <% if(expense.harddisks) { %>
+                                <span>Hard Disks: <strong>
+                                    &#8377; <%= expense.harddisks.toLocaleString(); %>
+                                </strong></span>
+                            <% } %>
+                            
+                            <% if(expense.lightings) { %>
+                                <span>Lights & Fans: <strong>
+                                    &#8377; <%= expense.lightings.toLocaleString(); %>
+                                </strong></span>
+                            <% } %>
+
+                            <% if(expense.fans) { %>
+                                <span>Chairs & Tables: <strong>
+                                    &#8377; <%= expense.fans.toLocaleString(); %>
+                                </strong></span>
+                            <% } %>
+
+                            <% if(expense.others) { %>
+                                <span>Other Costs: <strong>
+                                    &#8377; <%= expense.others.toLocaleString(); %>
+                                </strong></span>
+                            <% } %>
+                            
+                        </div>
+                    </td>
+                    <td class="text-danger font-weight-bolder"> &#8377; <%= expense.amount.toLocaleString(); %></>
+                    <td class="table__actions text-center" data-item-id="<%= expense.id %>">
+                        <a href="#" class="table__actions-btn expenseEditButton"
+                            data-toggle="modal" data-target="#addExpense"><i
+                                class="ic-pencil pr-2"></i>Edit</a>
+                        <a href="#" class="table__actions-btn"
+                            data-toggle="modal" data-target="#deleteModal"><i
+                                class="ic-trash pr-2"></i>Delete</a>
+                    </td>
+                    <!-- <td>
+                        <a href="/files/servicing/<%= expense._id %>" target="_blank" class="table__actions-btn">
+                            <i class="ic-print pr-2"></i>Generate</a>
+                    </td> -->
+                </tr>
+                <% })} %>
+            </tbody>
+        </table>
+    </div>
+</div>

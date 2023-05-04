@@ -1,0 +1,21 @@
+<div class="content-box">
+    <div class="table-responsive">
+        <table class="table table-striped table-md">
+            <thead class="table__header">
+                <tr>
+                    <!-- <th>Product Code</th> -->
+                    <th>Product Name</th>
+                    <!-- <th>Purchase Date</th> -->
+                    <!-- <th>Warranty Expiration Date</th> -->
+                </tr>
+            </thead>
+            <tbody class="table__body">
+                <% if(locals.sales) { sales.forEach((sale)=>{ %>
+                <tr>
+                      <td><%= sales.product.name; %></td>
+                </tr>
+                <% })} %>
+            </tbody>
+        </table>
+    </div>
+</div>
