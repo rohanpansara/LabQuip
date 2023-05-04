@@ -1,0 +1,84 @@
+<div
+  class="modal fade"
+  id="addInventory"
+  tabindex="-1"
+  role="dialog"
+  data-backdrop="static"
+>
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title inventoryForm-title">Allotment Details</h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form class="inventoryForm" action="/entries" method="post">
+          <!-- <div class="form-group align-items-center">
+                        <label for="purchaseDate">Purchase Date</label>
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">
+                                <i class="ic-calendar"></i>
+                            </div>
+                            <input type="date" class="form-control inventoryForm-purchaseDate"
+                                name="purchaseDate" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="product">Product Code</label>
+                        <span class="f-10 text-muted">(Can be found on product page)</span>
+                        <input type="text"
+                            class="form-control inventoryForm-product product-input-query" name="product"
+                            placeholder="Eg. MBL-001-002" required autocomplete="off"/>
+                        <ul class="list-group auto-suggestion product-input-query-group">
+                        </ul>
+                    </div> -->
+          <div class="row align-items-center">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="RemainingQuantity">Remaining Quantity</label>
+                <input
+                  type="number"
+                  class="form-control inventoryForm-RemainingQuantity"
+                  placeholder="Must be less than available."
+                  name="RemainingQuantity"
+                  min="1"
+                />
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="product">Status</label>
+                <select
+                  class="form-control inventoryForm-status"
+                  name="status"
+                >
+                  <option value="available">All Available</option>
+                  <option value="alloted">Alloted</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              <i class="ic-cross"></i> Close
+            </button>
+            <button type="submit" class="btn btn-primary">
+              <i class="ic-check"></i> Save Changes
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

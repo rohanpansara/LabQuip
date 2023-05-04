@@ -1,0 +1,88 @@
+<% if(user.role == 'admin') { %>
+<div class="content-box">
+    <div class="table-responsive">
+        <table class="table table-striped table-sm">
+            <thead class="table__header">
+                <tr>
+                    <th>Product Code</th>
+                    <!-- <th>Product Name</th> -->
+                    <th>Quantity <br>(Total)</th>
+                    <th>Quantity <br>(Available)</th>
+                    <th>Rates</th>
+                    <th>Purchase Order No.</th>
+                    <th>Invoice No.</th>
+                    <th>Year of Purchase</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                    <!-- <th>Remaining (Total)</th> -->
+                </tr>
+            </thead>
+            <tbody class="table__body font-weight-bold">
+                <% if(locals.inventories) {
+                    inventories.forEach((inventory)=>{ %>
+                <tr>
+                    <td><%= inventory.product.code; %></td>
+                    <!-- <td><%= inventory.product.name; %></td> -->
+                    <td><%= inventory.product.quantity.toLocaleString(); %></td>
+                    <td class="Product-Quantity">
+                        <% if(inventory.product.RemainingQuantity != 0){ %>
+                            <% const diff = (inventory.product.quantity)-(inventory.product.RemainingQuantity); %>
+                            <%= diff %>
+                        <% } else { %> 
+                            <%= inventory.product.quantity.toLocaleString(); %>
+                        <% } %>
+                    </td>
+                    <td class="Product-Rate">&#8377;<%= inventory.product.rate; %></td>
+                    <td><%= inventory.product.poNum; %></td>
+                    <td><%= inventory.product.invoiceNum; %></td>
+                    <td><%= inventory.product.purchaseDate.getFullYear(); %></td>
+                    <td>
+                        <% if(inventory.product.status =='available'){ %>
+                            <span class="badge badge-danger text-uppercase">All Available</span>
+                        <% } else { %>
+                            <span class="badge badge-success text-uppercase">Alloted</span><br>                            
+                            <span class="badge badge-warning text-uppercase">
+                                <%= inventory.product.RemainingQuantity %>
+                            </span><br>
+                            <span class="badge badge-info text-uppercase">
+                                <%= inventory.product.allotmentLoc %>
+                            </span>
+                        <% } %>
+                    </td>
+                    <td class="table__actions text-center" data-item-id="<%= inventory.product.id %>">
+                        <a href="" class="table__actions-btn productEditButton"
+                            data-toggle="modal" data-target="#addProduct"><i
+                                class="ic-pencil pr-2"></i>Edit</a><br>
+                        <a href="" class="table__actions-btn"
+                            data-toggle="modal" data-target="#deleteModal"><i
+                                class="ic-trash pr-2"></i>Delete</a>
+                    </td>
+                    <!-- <td class="table__actions text-center" data-item-id="<%= inventory._id %>">
+                        <% if(inventory.product.status =='available'){ %>
+                        <form class="d-inline-block p-0 m-0" action="<%=`/inventory/${inventory.product._id}?_method=patch`%>" method="post">
+                            <input type="hidden" value="alloted" name="status">
+                            <button class="btn d-inline-block btn-link table__actions-btn mb-2" data-toggle="modal"
+                                    data-target="#addProduct" class="table__actions-btn">
+                                <i class="ic-check pr-1"></i>Alloted
+                            </button>
+                        </form>
+                        <% } else { %>
+                            <form class="d-inline-block p-0 m-0" action="<%=`/inventory/${inventory.product._id}?_method=patch`%>" method="post">
+                                <input type="hidden" value="available" name="status">
+                                <button class="btn d-inline-block btn-link table__actions-btn mb-2" data-toggle="modal"
+                                    data-target="#addProduct" class="table__actions-btn">
+                                    <i class="ic-check pr-1"></i>All Available
+                                </button>
+                            </form>
+                        <% } %>
+                    </td> -->
+                        
+                    <!-- <td class="text-success font-weight-bold"><%= inventory.sales.toLocaleString(); %></td> -->
+                    <!-- <td class="text-info font-weight-bold"> <%= inventory.leftOver.toLocaleString(); %></td> -->
+                </tr>
+                <% })} %>
+            </tbody>
+        </table>
+    </div>
+</div>
+<% } %>

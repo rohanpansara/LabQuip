@@ -1,0 +1,240 @@
+<div
+  class="modal fade"
+  id="addProduct"
+  tabindex="-1"
+  role="dialog"
+  data-backdrop="static"
+>
+  <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title productForm-title font-weight-bold">
+          Add New Product
+        </h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="/products" method="post" class="productForm">
+          <div class="row align-items-center">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="purchaseDate">Purchase Date</label>
+                <input
+                  type="date"
+                  class="form-control productForm-purchaseDate"
+                  name="purchaseDate"
+                  required
+                />
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="code">Product Code</label>
+                <input
+                  type="text"
+                  class="form-control productForm-code"
+                  placeholder="Eg. ABC-XY-001"
+                  name="code"
+                  minlength="3"
+                  required
+                />
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="name">Product Name</label>
+                <input
+                  minlength="3"
+                  type="text"
+                  class="form-control productForm-name"
+                  placeholder="Eg. Lenovo Essential Combo"
+                  name="name"
+                  required
+                />
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="quantity">Product Quantity</label>
+                <input
+                  type="number"
+                  class="form-control productForm-quantity"
+                  placeholder="Eg. 30"
+                  name="quantity"
+                  required
+                  min="0"
+                />
+              </div>
+            </div>
+          
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for="rate">Product Rate</label>
+              <input
+                type="number"
+                class="form-control productForm-rate"
+                placeholder="Eg. 5000"
+                name="rate"
+                required
+                min="1"
+              />
+            </div>
+          </div>
+
+          
+        </div>
+          <div class="row align-items-center">
+            
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="warrantyPeriod">Warranty Period</label>
+                <input
+                  type="number"
+                  class="form-control productForm-warrantyPeriod"
+                  placeholder="Eg. 12"
+                  name="warrantyPeriod"
+                  required
+                />
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="poNum">Purchase Order No.</label>
+                <input
+                  type="number"
+                  class="form-control productForm-poNum"
+                  placeholder="Eg. 123456"
+                  name="poNum"
+                  required
+                  maxlength="6"
+                />
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="invoiceNum">Invoice No.</label>
+                <input
+                  type="number"
+                  class="form-control productForm-invoiceNum"
+                  placeholder="Eg. 65432123456"
+                  name="invoiceNum"
+                  required
+                />
+              </div>
+            </div>
+            <div class="col-md-4">
+          <div class="form-group">
+            <label for="supplierName">Supplier Name</label>
+            <input
+              type="text"
+              class="form-control productForm-supplierName"
+              placeholder="Eg. ABC Computer Solutions"
+              name="supplierName"
+              required
+              autocomplete="on"
+            />
+          </div>
+          </div>
+          <div class="col-md-4">
+          <div class="form-group">
+            <label for="supplierPhone">Supplier Contact</label>
+            <input
+              type="text"
+              class="form-control productForm-supplierPhone"
+              name="supplierPhone"
+              placeholder="Eg. 9846464698"
+              required
+              autocomplete="on"
+              maxlength="10"
+            />
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="supplierAddress">Supplier Address</label>
+            <input
+              type="text"
+              class="form-control supplierForm-supplierAddress"
+              name="supplierAddress"
+              placeholder="Eg. College Road, Nadiad"
+              required
+              autocomplete="on"
+              maxlength="255"
+            />
+          </div>
+        </div>
+      </div>
+          <div class="form-group">
+            <label for="productDescription">Product Description</label>
+            <input
+              type="text"
+              class="form-control productForm-productDescription"
+              name="productDescription"
+              placeholder="Describe your product."
+              autocomplete="on"
+              maxlength="255"
+            />
+          </div>
+        
+          <div class="row align-items-center">
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="product">Status</label>
+                <select
+                  class="form-control inventoryForm-status"
+                  name="status"
+                >
+                  <option value="available">All Available</option>
+                  <option value="alloted">Alloted</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="RemainingQuantity">Alloted Quantity</label>
+                <input
+                  type="number"
+                  class="form-control inventoryForm-RemainingQuantity"
+                  placeholder="Must be less than available."
+                  name="RemainingQuantity"
+                />
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="allotmentLoc">Allotment Location</label>
+                <input
+                  type="text"
+                  class="form-control productForm-allotmentLoc"
+                  placeholder="Eg. IT Lab 5"
+                  name="allotmentLoc"
+                  autocomplete="on"
+                />
+              </div>
+              </div>
+          </div>
+
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              <i class="ic-cross"></i> Close
+            </button>
+            <button type="submit" class="btn btn-primary">
+              <i class="ic-check"></i> Save Changes
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

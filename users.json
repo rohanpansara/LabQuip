@@ -1,0 +1,25 @@
+[{
+  "_id": {
+    "$oid": "6401b5fed74bebdba473f96a"
+  },
+  "name": "Rohan Pansara",
+  "email": "rohanpansara@gmail.com",
+  "password": "$2a$10$81Pw9jWpmF8bFc9ctF6S4Oh4kTtMc9vKWWFLFADRssH0MN6rW056q",
+  "role": "admin",
+  "createdAt": "",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6404e6fb6f6f6e10206ac910"
+  },
+  "name": "Hardik Patel",
+  "email": "hardikpatel@yahoo.com",
+  "password": "$2a$10$j4wKY0H9xNsIxs6ATI/EFuhe5hyfylNwY5oomTyeIKlBLLnx3AI3y",
+  "role": "inventory",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678062675556"
+    }
+  },
+  "__v": 0
+}]

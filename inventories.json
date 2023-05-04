@@ -1,0 +1,13 @@
+[{
+  "_id": {
+    "$oid": "641339c7fd9de7197836aeab"
+  },
+  "quantity": 0,
+  "sales": 0,
+  "returns": 0,
+  "leftOver": 0,
+  "product": {
+    "$oid": "641339c7fd9de7197836aeaa"
+  },
+  "__v": 0
+}]

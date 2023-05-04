@@ -1,0 +1,141 @@
+<div class="modal fade" id="addExpense" tabindex="-1" role="dialog"
+    data-backdrop="static">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title font-weight-bold expenseForm-title">
+                    Add New Expense
+                </h5>
+                <button type="button" class="close" data-dismiss="modal"
+                    aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="/expenses" method="post" class="expenseForm">
+                    <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="expenseDate">Expense Date</label>
+                            <div class="input-group-prepend">
+                                <!-- <div class="input-group-text">
+                                    <i class="ic-calendar"></i>
+                                </div> -->
+                                <input type="date" class="form-control expenseForm-expenseDate"
+                                    name="expenseDate" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="monitors">Monitors</label>
+                            <input type="number" class="form-control expenseForm-monitors"
+                                name="monitors"
+                                placeholder="Eg. 1230" min="0"/>
+                        </div>
+                    </div>
+                </div>
+                    <!-- <div class="form-group">
+                        <label for="purpose">Purpose</label>
+                        <input type="text" class="form-control expenseForm-purpose" name="purpose"
+                            placeholder="Office Furniture" required/>
+                    </div> -->
+
+                    <div class="row align-items-center">
+                        
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="keyboards">Keyboards</label>
+                                <input type="number" class="form-control expenseForm-keyboards"
+                                    name="keyboards"
+                                    placeholder="Eg. 1230" min="0"/>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="mouse">Mouse</label>
+                                <input type="number" class="form-control expenseForm-mouse"
+                                    name="mouse"
+                                    placeholder="Eg. 1230" min="0"/>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="harddisks">Hard Disks</label>
+                                <input type="number" class="form-control expenseForm-harddisks"
+                                    name="harddisks"
+                                    placeholder="Eg. 1230" min="0"/>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="motherboard">Motherboard</label>
+                                <input type="number" class="form-control expenseForm-motherboard"
+                                    name="motherboard"
+                                    placeholder="Eg. 1230" min="0"/>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="rams">RAM</label>
+                                <input type="number" class="form-control expenseForm-rams"
+                                    name="rams"
+                                    placeholder="Eg. 1230" min="0"/>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="processors">Processors</label>
+                                <input type="number" class="form-control expenseForm-processors"
+                                    name="processors"
+                                    placeholder="Eg. 1230" min="0"/>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="lightings">Lights & Fans</label>
+                                <input type="number" class="form-control expenseForm-lightings"
+                                    name="lightings"
+                                    placeholder="Eg. 1230"
+                                    min="0"/>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="fans">Chairs & Tables</label>
+                                <input type="number" class="form-control expenseForm-fans"
+                                    name="fans"
+                                    placeholder="Eg. 1230"
+                                    min="0"/>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="others">Other Costs</label>
+                                <input type="number" class="form-control expenseForm-others"
+                                    name="others"
+                                    placeholder="Eg. 1230"
+                                    min="0"/>
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                            data-dismiss="modal">
+                            <i class="ic-cross"></i> Close
+                        </button>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="ic-check"></i> Save
+                            Changes
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

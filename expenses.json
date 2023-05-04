@@ -1,0 +1,27 @@
+[{
+  "_id": {
+    "$oid": "64076f7bbd6cf81958c9e7d9"
+  },
+  "monitors": 500,
+  "keyboards": 800,
+  "harddisks": 345,
+  "motherboard": 0,
+  "rams": 655,
+  "mouse": 0,
+  "processors": 0,
+  "lightings": 424,
+  "fans": 123,
+  "others": 231,
+  "amount": 3078,
+  "expenseDate": {
+    "$date": {
+      "$numberLong": "1675229400000"
+    }
+  },
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1678228691018"
+    }
+  },
+  "__v": 0
+}]
